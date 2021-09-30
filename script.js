@@ -62,7 +62,7 @@ var tekenAlles = function () {
   rect(spelerX - 40, spelerY - 40, 10, 10);
   fill("purple")
   rect(spelerX - 20, spelerY- 40, 10, 10);
-  fill("red")
+  fill("pink")
   ellipse(spelerX - 25, spelerY - 17, 30, 15)
   // punten en health
 
