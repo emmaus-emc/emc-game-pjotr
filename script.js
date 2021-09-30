@@ -56,11 +56,14 @@ var tekenAlles = function () {
   // kogel
 
   // speler
-  fill("white");
-  rect(spelerX - 25, spelerY - 25, 50, 50);
-  fill("black");
-  ellipse(spelerX , spelery, 10, 10);
-
+  fill("green");
+  ellipse(spelerX - 25, spelerY - 25, 50, 50);
+  fill("purple")
+  rect(spelerX - 40, spelerY - 40, 10, 10);
+  fill("purple")
+  rect(spelerX - 20, spelerY- 40, 10, 10);
+  fill("red")
+  ellipse(spelerX - 25, spelerY - 17, 30, 15)
   // punten en health
 
 };
