@@ -1,7 +1,7 @@
 Deze game is gebaseerd op het template voor 4HV van het Emmauscollege Rotterdam
 
 ## Mijn spel: *naam van het spel*
-Gemaakt door: *Pjotr Lamers*
+Gemaakt door: *Pjotr*
 
 ### Beschrijving
 Dit spel is een shooter. 
