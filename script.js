@@ -30,7 +30,7 @@ var beweegAlles = function () {
   // kogel
 
   // speler
-      if (KeyIsDown(38))  X += 5; 
+      if (KeyIsDown(38)) { X += 5; }
       
 };
 
