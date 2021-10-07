@@ -30,7 +30,12 @@ var beweegAlles = function () {
   // kogel
 
   // speler
-      if (keyIsDown(38)) { spelerY += 5; }
+      if (keyIsDown(38)) { spelerY -= 5; }
+      if (keyIsDown(37)) { spelerX -= 5; }
+      if (keyIsDown(39)) { spelerX += 5; }
+      if (keyIsDown(40)) { spelerY += 5; }
+      clear();
+
 };
 
 /**
@@ -50,7 +55,7 @@ var verwerkBotsing = function () {
  */
 var tekenAlles = function () {
   // achtergrond
-
+    
   // vijand
 
   // kogel
