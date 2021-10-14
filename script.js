@@ -17,6 +17,8 @@ var spelStatus = SPELEN;
 var spelerX = 600; // x-positie van speler
 var spelerY = 600; // y-positie van speler
 
+const KEY_UP = 38;
+
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -30,90 +32,100 @@ var beweegAlles = function () {
   // kogel
 
   // speler
-      if (keyIsDown(38)) { spelerY -= 5; }
-      if (keyIsDown(37)) { spelerX -= 5; }
-      if (keyIsDown(39)) { spelerX += 5; }
-      if (keyIsDown(40)) { spelerY += 5; }
-      clear();
+  if (keyIsDown(KEY_UP)) { spelerY -= 5; }
+  if (keyIsDown(37)) { spelerX -= 5; }
+  if (keyIsDown(39)) { spelerX += 5; }
+  if (keyIsDown(40)) { spelerY += 5; }
 
-};
+  if (spelerY < 50) {
+    spelerY = 50;}
+    if (spelerX < 50) {
+      spelerX = 50;}
+      if (spelerX > 1280) {
+        spelerX = 1280;}
+        if (spelerY > 720) {
+          spelerY = 720;}
 
-/**
- * Checkt botsingen
- * Verwijdert neergeschoten vijanden
- * Updatet globale variabelen punten en health
- */
-var verwerkBotsing = function () {
-  // botsing speler tegen vijand
-
-  // botsing kogel tegen vijand
-
-};
-
-/**
- * Tekent spelscherm
- */
-var tekenAlles = function () {
-  // achtergrond
-    
-  // vijand
-
-  // kogel
-
-  // speler
-  fill("green");
-  ellipse(spelerX - 25, spelerY - 25, 50, 50);
-  fill("purple")
-  rect(spelerX - 40, spelerY - 40, 10, 10);
-  fill("purple")
-  rect(spelerX - 20, spelerY- 40, 10, 10);
-  fill("pink")
-  ellipse(spelerX - 25, spelerY - 17, 30, 15)
-  // punten en health
-
-};
-
-/**
- * return true als het gameover is
- * anders return false
- */
-var checkGameOver = function () {
-  return false;
-};
-
-/* ********************************************* */
-/* setup() en draw() functies / hoofdprogramma   */
-/* ********************************************* */
-
-/**
- * setup
- * de code in deze functie wordt één keer uitgevoerd door
- * de p5 library, zodra het spel geladen is in de browser
- */
-function setup() {
-  // Maak een canvas (rechthoek) waarin je je speelveld kunt tekenen
-  createCanvas(1280, 720);
-
-  // Kleur de achtergrond blauw, zodat je het kunt zien
-  background('blue');
+        ;
 }
+  /**
+   * Checkt botsingen
+   * Verwijdert neergeschoten vijanden
+   * Updatet globale variabelen punten en health
+   */
+  var verwerkBotsing = function () {
+    // botsing speler tegen vijand
 
-/**
- * draw
- * de code in deze functie wordt 50 keer per seconde
- * uitgevoerd door de p5 library, nadat de setup functie klaar is
- */
-function draw() {
-  if (spelStatus === SPELEN) {
-    beweegAlles();
-    verwerkBotsing();
-    tekenAlles();
-    if (checkGameOver()) {
-      spelStatus = GAMEOVER;
+    // botsing kogel tegen vijand
+
+  };
+
+  /**
+   * Tekent spelscherm
+   */
+  var tekenAlles = function () {
+    // achtergrond
+    clear();
+    background(51);
+
+    // vijand
+
+    // kogel
+
+    // speler
+    fill("green");
+    ellipse(spelerX - 25, spelerY - 25, 50, 50);
+    fill("purple")
+    rect(spelerX - 40, spelerY - 40, 10, 10);
+    fill("purple")
+    rect(spelerX - 20, spelerY - 40, 10, 10);
+    fill("pink")
+    ellipse(spelerX - 25, spelerY - 17, 30, 15)
+    // punten en health
+
+  };
+
+  /**
+   * return true als het gameover is
+   * anders return false
+   */
+  var checkGameOver = function () {
+    return false;
+  };
+
+  /* ********************************************* */
+  /* setup() en draw() functies / hoofdprogramma   */
+  /* ********************************************* */
+
+  /**
+   * setup
+   * de code in deze functie wordt één keer uitgevoerd door
+   * de p5 library, zodra het spel geladen is in de browser
+   */
+  function setup() {
+    // Maak een canvas (rechthoek) waarin je je speelveld kunt tekenen
+    createCanvas(1280, 720);
+
+    // Kleur de achtergrond blauw, zodat je het kunt zien
+    background('blue');
+  }
+
+  /**
+   * draw
+   * de code in deze functie wordt 50 keer per seconde
+   * uitgevoerd door de p5 library, nadat de setup functie klaar is
+   */
+  function draw() {
+    if (spelStatus === SPELEN) {
+      beweegAlles();
+      verwerkBotsing();
+      tekenAlles();
+      if (checkGameOver()) {
+        spelStatus = GAMEOVER;
+      }
+    }
+    if (spelStatus === GAMEOVER) {
+      // teken game-over scherm
+
     }
   }
-  if (spelStatus === GAMEOVER) {
-    // teken game-over scherm
-
-  }
-}
