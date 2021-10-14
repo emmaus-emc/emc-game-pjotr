@@ -17,6 +17,9 @@ var spelStatus = SPELEN;
 var spelerX = 600; // x-positie van speler
 var spelerY = 600; // y-positie van speler
 
+var vijandX = 500;
+var vijandY = 0;
+
 const KEY_UP = 38;
 
 /* ********************************************* */
@@ -28,7 +31,9 @@ const KEY_UP = 38;
  */
 var beweegAlles = function () {
   // vijand
-
+ vijandY = vijandY + 5
+ if (vijandY >730) {
+   vijandY = 0;}
   // kogel
 
   // speler
@@ -69,7 +74,15 @@ var beweegAlles = function () {
     background(51);
 
     // vijand
-
+    fill("gray")
+    ellipse(vijandX - 25, vijandY - 25, 50, 50);
+    fill("red")
+    rect(vijandX - 40, vijandY - 40, 10, 10);
+    fill("red")
+    rect(vijandX - 20, vijandY - 40, 10, 10);
+    fill("white")
+    ellipse(vijandX - 25, vijandY - 25, 30, 15);
+    
     // kogel
 
     // speler
