@@ -73,6 +73,9 @@ var beweegAlles = function () {
      
     // botsing kogel tegen vijand
 
+    // punten
+    PUNT = PUNT +0.02;
+
   };
 
   /**
@@ -119,7 +122,7 @@ var beweegAlles = function () {
     rect(1100, 80, 150, 50)
     fill("black")
     textSize(50);
-    text( PUNT, 1150, 120);
+    text( floor(PUNT), 1150, 120);
 
 
   };
