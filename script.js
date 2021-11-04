@@ -22,6 +22,8 @@ var vijandY = 0;
 
 const KEY_UP = 38;
 
+var HP= 10;
+
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -60,6 +62,10 @@ var beweegAlles = function () {
    */
   var verwerkBotsing = function () {
     // botsing speler tegen vijand
+    if (vijandX - spelerX < 50 && vijandX - spelerX> -50 && vijandY - spelerY <50 && vijandY - spelerY> -50){
+      console.log("botsing")
+      HP -= 1;
+    }
 
     // botsing kogel tegen vijand
 
@@ -95,6 +101,13 @@ var beweegAlles = function () {
     fill("pink")
     ellipse(spelerX - 25, spelerY - 17, 30, 15)
     // punten en health
+
+    fill("white")
+    rect(1100, 30 , 150, 50)
+
+    fill("black")
+    textSize(50);
+    text( HP, 1150, 70);
 
   };
 
