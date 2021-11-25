@@ -83,7 +83,7 @@ var beweegAlles = function () {
    */
   var tekenAlles = function () {
     // achtergrond
-    clear();
+    clear();222
     background(51);
 
     // vijand
@@ -127,13 +127,6 @@ var beweegAlles = function () {
 
   };
 
-  /**
-   * return true als het gameover is
-   * anders return false
-   */
-  var checkGameOver = function () {
-    return false;
-  };
 
   /* ********************************************* */
   /* setup() en draw() functies / hoofdprogramma   */
@@ -162,12 +155,15 @@ var beweegAlles = function () {
       beweegAlles();
       verwerkBotsing();
       tekenAlles();
-      if (checkGameOver()) {
+      if (HP<=0) {
         spelStatus = GAMEOVER;
       }
     }
     if (spelStatus === GAMEOVER) {
       // teken game-over scherm
+     textSize (34)
+     background("red")
+     text("loser",550,300)
 
     }
   }
