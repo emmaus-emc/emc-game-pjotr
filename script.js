@@ -64,11 +64,13 @@ var beweegAlles = function () {
    */
   var verwerkBotsing = function () {
     // botsing speler tegen vijand
+    for (var i = 0; i < 8 ; i++) {
+    vijandX = i *150
     if (vijandX - spelerX < 50 && vijandX - spelerX> -50 && vijandY - spelerY <50 && vijandY - spelerY> -50){
       console.log("botsing")
       if (HP>0) HP -=  1;
     }
-
+  }
 
      
     // botsing kogel tegen vijand
@@ -87,6 +89,8 @@ var beweegAlles = function () {
     background(51);
 
     // vijand
+    for (var i = 0; i < 8 ; i++) {
+      vijandX = i *150
     fill("gray")
     ellipse(vijandX - 25, vijandY - 25, 50, 50);
     fill("red")
@@ -95,7 +99,7 @@ var beweegAlles = function () {
     rect(vijandX - 20, vijandY - 40, 10, 10);
     fill("white")
     ellipse(vijandX - 25, vijandY - 25, 30, 15);
-    
+    }
     // kogel
 
     // speler
