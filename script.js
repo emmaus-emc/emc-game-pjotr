@@ -46,6 +46,8 @@ if (keyIsDown(32))
   {kogelX = spelerX}
 if(keyIsDown(32))
   {kogelY = spelerY}
+
+ kogelY = kogelY - 5;
   // speler
   if (keyIsDown(KEY_UP)) { spelerY -= 5; }
   if (keyIsDown(37)) { spelerX -= 5; }
