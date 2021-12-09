@@ -26,8 +26,8 @@ var HP= 100;
 
 var PUNT= 0;
 
-var kogelX= 700;
-var kogelY= 700;
+var kogelX= spelerX;
+var kogelY= spelerY;
 
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
@@ -79,10 +79,15 @@ if(keyIsDown(32))
       if (HP>0) HP -=  1;
     }
   }
-
+  
      
     // botsing kogel tegen vijand
-
+    for (var i = 0; i < 8 ; i++) {
+      vijandX = i *150
+    if (kogelX - vijandX < 50 && kogelX - vijandX> -50 && kogelY - vijandY <50 && kogelY - vijandY> -50){
+      console.log("botsing2")
+    }
+  }
     // punten
     PUNT = PUNT +0.02;
 
