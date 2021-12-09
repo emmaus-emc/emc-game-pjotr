@@ -26,6 +26,9 @@ var HP= 100;
 
 var PUNT= 0;
 
+var kogelX= 700;
+var kogelY= 700;
+
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -39,7 +42,10 @@ var beweegAlles = function () {
  if (vijandY >730) {
    vijandY = 0;}
   // kogel
-
+if (keyIsDown(32)) 
+  {kogelX = spelerX}
+if(keyIsDown(32))
+  {kogelY = spelerY}
   // speler
   if (keyIsDown(KEY_UP)) { spelerY -= 5; }
   if (keyIsDown(37)) { spelerX -= 5; }
@@ -101,7 +107,8 @@ var beweegAlles = function () {
     ellipse(vijandX - 25, vijandY - 25, 30, 15);
     }
     // kogel
-
+    fill("black")
+    ellipse(kogelX  - 25, kogelY - 25, 20, 20)
     // speler
     fill("green");
     ellipse(spelerX - 25, spelerY - 25, 50, 50);
