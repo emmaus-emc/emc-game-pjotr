@@ -89,7 +89,7 @@ if(keyIsDown(32))
     }
   }
     // punten
-    PUNT = PUNT +0.02;
+    PUNT = PUNT + 0.02;
 
   };
 
